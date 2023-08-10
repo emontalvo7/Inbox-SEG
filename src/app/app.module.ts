@@ -10,6 +10,9 @@ import { OffcanvasComponent } from './shared/offcanvas/offcanvas.component';
 import { PaginadorComponent } from './shared/paginador/paginador.component';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { TableModule } from 'primeng/table';
     BrowserAnimationsModule,
     ButtonModule,
     TableModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

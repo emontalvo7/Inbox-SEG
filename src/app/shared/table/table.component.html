@@ -2,57 +2,38 @@
   <table class="table table-responsive table-striped table-bordered" style="font-size: smaller; text-align: center;">
     <thead>
       <tr>
-        <td rowspan="2"> </td>
-        <td colspan="3">Solicitud</td>
-        <td colspan="2" rowspan="2">Movimiento</td>
-        <td colspan="2" rowspan="2">Estatus</td>
-        <td colspan="2" rowspan="2">Referencia</td>
-        <td colspan="2" rowspan="2">Folio Medio Alterno</td>
+        <th rowspan="2">Detalle </th>
+        <th colspan="3">Solicitud</th>
+        <th colspan="2" rowspan="2">Movimiento</th>
+        <th colspan="2" rowspan="2">Estatus</th>
+        <th colspan="2" rowspan="2">Referencia</th>
+        <th colspan="2" rowspan="2">Folio Medio Alterno</th>
+        <th colspan="2" rowspan="2">Fecha Medio Alterno</th>
+        <th colspan="2" rowspan="2">Hora Medio Alterno</th>
       </tr>
       <tr>
-        <td>
-          Folio
-        </td>
-        <td>
-          CS
-        </td>
-        <td>
-          Fecha Creacion
-        </td>
+        <th>Folio</th>
+        <th>CS</th>
+        <th>Fecha Creacion</th>
       </tr>
     </thead>
 
     <tbody class="table-group-divider">
-      <tr>
-        <td>Mensaje</td>
-        <td>200047555</td>
-        <td>PEGASO PCS S.A. DE C.V.</td>
-        <td>2023-07-26 09:53:42 AM</td>
-        <td colspan="2">Alta</td>
-        <td colspan="2">Enviado</td>
-        <td colspan="2">UG1-2307-0004</td>
-        <td colspan="2"> </td>
+      <tr *ngFor="let inbox of inboxes">
+        <td>{{inbox.detalle}}</td>
+        <td>{{inbox.folio}}</td>
+        <td>{{inbox.cs}}</td>
+        <td>{{inbox.fechaCreacion}}</td>
+        <td colspan="2">{{inbox.movimiento}}</td>
+        <td colspan="2">{{inbox.estatus}}</td>
+        <td colspan="2">{{inbox.referencia}}</td>
+        <td colspan="2">{{inbox.folioMedioAlt}}</td>
+        <td colspan="2">{{inbox.fechaMedioAlt}}</td>
+        <td>{{inbox.horaMedioAlt}}</td>
+
+
       </tr>
-      <tr>
-        <td>Mensaje</td>
-        <td>200047555</td>
-        <td>PEGASO PCS S.A. DE C.V.</td>
-        <td>2023-07-26 09:53:42 AM</td>
-        <td colspan="2">Alta</td>
-        <td colspan="2">Enviado</td>
-        <td colspan="2">UG1-2307-0004</td>
-        <td colspan="2"> </td>
-      </tr>
-      <tr>
-        <td>Mensaje</td>
-        <td>200047555</td>
-        <td>PEGASO PCS S.A. DE C.V.</td>
-        <td>2023-07-26 09:53:42 AM</td>
-        <td colspan="2">Alta</td>
-        <td colspan="2">Enviado</td>
-        <td colspan="2">UG1-2307-0004</td>
-        <td colspan="2"> </td>
-      </tr>
+
     </tbody>
 
   </table>
