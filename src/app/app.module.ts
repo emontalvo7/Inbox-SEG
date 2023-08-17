@@ -8,11 +8,19 @@ import { AccordionComponent } from './shared/accordion/accordion.component';
 import { TableComponent } from './shared/table/table.component';
 import { OffcanvasComponent } from './shared/offcanvas/offcanvas.component';
 import { PaginadorComponent } from './shared/paginador/paginador.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from './services/product-service';
+import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TagModule } from 'primeng/tag';
+import { CustomerService } from './services/customer-service';
+
+import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
-import { HttpClientModule } from '@angular/common/http';
-
-
+import { MultiSelectModule } from 'primeng/multiselect';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -28,10 +36,17 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ButtonModule,
     TableModule,
+    MultiSelectModule,
+    TagModule,
+    AccordionModule,
+    SelectButtonModule,
+    DialogModule,
+    FormsModule,
+    FontAwesomeModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ProductService, CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

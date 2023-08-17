@@ -1,17 +1,5 @@
-<div class="accordion accordion-flush" id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-        [attr.data-bs-target]="'#flush-collapse'+dataSet" aria-expanded="false"
-        [attr.aria-controls]="'flush-collapse'+dataSet">
-        Inbox SEG Solicitudes en Proceso
-      </button>
-    </h2>
-    <div [attr.id]="'flush-collapse'+dataSet" class="accordion-collapse collapse"
-      data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-        <app-table dataSet={{dataSet}}></app-table>
-      </div>
-    </div>
-  </div>
-</div>
+<p-accordion [activeIndex]="0">
+  <p-accordionTab header=" Inbox SEG Solicitudes en Proceso">
+    <app-table></app-table>
+  </p-accordionTab>
+</p-accordion>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { enviroment } from 'src/environments/enviroment.dev';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +6,5 @@ import { enviroment } from 'src/environments/enviroment.dev';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  tables: any = enviroment.INBOX;
   title = 'SEG-Inbox';
 }

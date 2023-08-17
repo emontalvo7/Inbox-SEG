@@ -1,21 +1,11 @@
 <app-navbar></app-navbar><br><br><br><br>
-<h6 class="text-primary">Inbox de Estatus Enlaces RN</h6>
-
-<p-button label="Submit" icon="pi pi-check"></p-button>
+<h6 class="text-primary text-center">Inbox de Estatus Enlaces RN</h6><br>
 
 <div class="row">
-  <div class="col-11">
-    <app-accordion dataSet="{{tables.INBOX_SOLICITUD_PROCESO}}"></app-accordion>
-  </div>
-  <div class="col-1 align-items-end">
-    <br>
-    <app-offcanvas></app-offcanvas>
-  </div>
+  <app-accordion></app-accordion>
+  <!--<app-accordion dataSet="{{tables.INBOX_SOLICITUD_PROCESO}}"></app-accordion>-->
 </div>
 <div class="row">
-  <div class="col-11">
-    <app-accordion dataSet="{{tables.INBOX_BAJA}}"></app-accordion>
-  </div>
+  <app-accordion></app-accordion>
+  <!--<app-accordion dataSet="{{tables.INBOX_BAJA}}"></app-accordion> -->
 </div>
-<app-paginador></app-paginador>
-<router-outlet></router-outlet>
