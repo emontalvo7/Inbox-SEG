@@ -10,7 +10,7 @@ import { enviroment } from 'src/environments/enviroment.dev';
 })
 export class TableComponent implements OnInit {
   tables: any = enviroment.INBOX;
-  inboxes?: Inbox[];
+  inboxes!: any[];
   pagina?: number=1;
   limite?: number=10;
   busqueda?: string='Test';

@@ -1,11 +1,11 @@
-<app-navbar></app-navbar><br><br><br><br>
+<app-navbar></app-navbar>
+<br><br><br><br>
 <h6 class="text-primary">Inbox de Estatus Enlaces RN</h6>
 
-<p-button label="Submit" icon="pi pi-check"></p-button>
 
 <div class="row">
   <div class="col-11">
-    <app-accordion dataSet="{{tables.INBOX_SOLICITUD_PROCESO}}"></app-accordion>
+    <app-accordion dataSet="{{tables.INBOX_SOLICITUD_PROCESO}}" title="Inbox SEG Solicitudes en Proceso"></app-accordion>
   </div>
   <div class="col-1 align-items-end">
     <br>
@@ -14,8 +14,24 @@
 </div>
 <div class="row">
   <div class="col-11">
-    <app-accordion dataSet="{{tables.INBOX_BAJA}}"></app-accordion>
+    <app-accordion dataSet="{{tables.INBOX_BAJA}}" title="Inbox Bajas"></app-accordion>
   </div>
 </div>
-<app-paginador></app-paginador>
+<div class="row">
+  <div class="col-11">
+    <app-accordion dataSet="{{tables.INBOX_CANCELADAS}}" title="Inbox SEG Canceladas"></app-accordion>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-11">
+    <app-accordion dataSet="{{tables.INBOX_SERVICIOS_OPE}}" title="Inbox SEG SERVICIOS EN OPERACION"></app-accordion>
+  </div>
+</div>
+<div class="row">
+  <div class="col-11">
+    <app-accordion dataSet="{{tables.INBOX_SIPO}}" title="Inbox SIPO"></app-accordion>
+  </div>
+</div>
+
 <router-outlet></router-outlet>

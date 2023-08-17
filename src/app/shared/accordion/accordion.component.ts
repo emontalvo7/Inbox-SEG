@@ -9,4 +9,7 @@ export class AccordionComponent {
   @Input()
    dataSet?:string;
 
+   @Input()
+   title?:string;
+
 }
