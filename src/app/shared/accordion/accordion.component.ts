@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./accordion.component.css']
 })
 export class AccordionComponent {
-
+  @Input() perfil: any;
 
 }

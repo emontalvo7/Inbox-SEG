@@ -1,7 +1,32 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Servicio } from '../models/servicio';
 
 @Injectable()
 export class ProductService {
+
+  private baseUrl = 'http://localhost:8080';
+
+  constructor(private http: HttpClient) { }
+
+  getAllProductsApi(): Observable<Servicio[]> {
+    return this.http.get<Servicio[]>(`${this.baseUrl}/servicios?page=0&size=5000`);
+  }
+
+  getProductsInPriceRange(page: number, size: number): Observable<Servicio[]> {
+    let params = new HttpParams();
+    params = params.append('page', page.toString());
+    params = params.append('size', size.toString());
+
+    return this.http.get<Servicio[]>(`${this.baseUrl}/servicios`, { params });
+  }
+
+
+
+
+
+  /*
   getProductsData() {
     return [
       {
@@ -985,4 +1010,6 @@ export class ProductService {
   getProduct(keyword: any) {
     return Promise.resolve(this.getProductsData().find((element: any) => element.folio == keyword));
   }
-};
+  */
+
+}

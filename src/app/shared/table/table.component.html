@@ -1,16 +1,12 @@
 <div class="card">
 
-  <p-table #dt1 [columns]="selectedColumns" [value]="products" [styleClass]="selectedSize.class" dataKey="id"
-    [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10, 25, 50]" [loading]="loading"
-    selectionMode="single" [(selection)]="selectedProduct" dataKey="code" (onRowSelect)="onRowSelect($event)"
-    [paginator]="true"
-    [globalFilterFields]="['folio', 'cs', 'fecha_creacion', 'movimiento', 'estatus', 'referencia', 'folio_medio_alterno']"
+  <p-table #dt1 [columns]="selectedColumns" [value]="products" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10, 25, 50]" [loading]="loading" selectionMode="single" [(selection)]="selectedProduct"
+    dataKey="code" (onRowSelect)="onRowSelect($event)" [paginator]="true"
+    [globalFilterFields]="['folio_serv', 'descripcion', 'fecha_creacion_serv', 'movimiento', 'estado', 'referencia', 'folio_articulo']"
     currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} entradas">
     <ng-template pTemplate="caption">
-      <div class="flex justify-content-start mb-3">
-        <p-selectButton [options]="sizes" [(ngModel)]="selectedSize" [multiple]="false" optionLabel="name"
-          optionValue="class"></p-selectButton>
-      </div>
+
       <div class="flex" style="margin-left: 70%;">
         <button type="button" pButton pRipple icon="pi pi-file" (click)="dt1.exportCSV()" class="mr-2" pTooltip="CSV"
           tooltipPosition="bottom">CSV</button>
@@ -91,28 +87,26 @@
       </tr>
   -->
     </ng-template>
-    <ng-template pTemplate="body" let-product let-columns="columns">
+    <ng-template pTemplate="body" let-rowData let-product let-columns="columns">
       <tr [pSelectableRow]="product" style="font-size: xx-small">
         <td>
+          <p-button (click)="showDialog(product.folio_serv)" label="Abrir"></p-button>
           <div class="card flex justify-content-center">
-            <p-button (click)="showDialog(product.folio)" label="Abrir"></p-button>
             <p-dialog header="Seguimiento de Solicitudes" [(visible)]="visible" [style]="{width: '50vw'}"
               [maximizable]="true">
               <h6>Solicitud: </h6>{{product.referencia}}
-              <h6>Etapa: </h6> {{product.estatus}}
-              <h6>Fecha: </h6>{{product.fecha_creacion}}<br>
+              <h6>Etapa: </h6> {{product.estado}}
+              <h6>Fecha: </h6>{{product.fecha_creacion_serv}}<br>
               ------------------------------------------ <br>
               <h6>Solicitud: </h6>{{product.referencia}}
-              <h6>Etapa: </h6> {{product.estatus}}
-              <h6>Fecha: </h6>{{product.fecha_creacion}}<br>
+              <h6>Etapa: </h6> {{product.estado}}
+              <h6>Fecha: </h6>{{product.fecha_creacion_serv}}<br>
               <a class="btn btn-primary" href="{{openURL}}" target="_blank">Abrir Atlas Web</a>
-
-
             </p-dialog>
           </div>
         </td>
         <td *ngFor="let col of columns">
-          {{product[col.field]}}
+          {{rowData[col.field]}}
         </td>
       </tr>
 

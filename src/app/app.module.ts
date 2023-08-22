@@ -21,6 +21,8 @@ import { TableModule } from 'primeng/table';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DialogModule } from 'primeng/dialog';
+import { HomeComponent } from './home/home.component';
+import { InboxComponent } from './inbox/inbox.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { DialogModule } from 'primeng/dialog';
     AccordionComponent,
     TableComponent,
     OffcanvasComponent,
-    PaginadorComponent
+    PaginadorComponent,
+    HomeComponent,
+    InboxComponent
   ],
   imports: [
     BrowserModule,
